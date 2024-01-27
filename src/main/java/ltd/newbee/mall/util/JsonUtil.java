@@ -18,7 +18,7 @@ public class JsonUtil {
      * @param:传入对象，json字符串
      * @return:Object
      */
-    public static Object jsonToObj(Class objClass, String jsonStr) throws JsonParseException, JsonMappingException, IOException {
+    public static Object jsonToObj(Class objClass, String jsonStr) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         return mapper.readValue(jsonStr, objClass);
     }

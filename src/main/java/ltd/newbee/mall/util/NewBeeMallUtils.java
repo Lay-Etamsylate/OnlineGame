@@ -4,9 +4,6 @@ import org.springframework.util.StringUtils;
 
 import java.net.URI;
 
-/**
- * @author 13
- */
 public class NewBeeMallUtils {
 
     public static URI getHost(URI uri) {
@@ -39,7 +36,7 @@ public class NewBeeMallUtils {
         value = value.replaceAll("document", "d0cument");
         value = value.replaceAll("const", "c0nst");
         value = value.replaceAll("eval\\((.*)\\)", "");
-        value = value.replaceAll("[\\\"\\\'][\\s]*javascript:(.*)[\\\"\\\']", "\"\"");
+        value = value.replaceAll("[\\\"\\'][\\s]*javascript:(.*)[\\\"\\']", "\"\"");
         value = value.replaceAll("script", "scr1pt");
         value = value.replaceAll("insert", "1nsert");
         value = value.replaceAll("drop", "dr0p");

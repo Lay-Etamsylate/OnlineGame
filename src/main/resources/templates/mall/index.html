@@ -7,66 +7,66 @@
 <header th:replace="~{mall/header::header-fragment}"></header>
 <content id="content">
     <nav th:replace="~{mall/header::nav-fragment}"></nav>
-<!--    <div id="banner">-->
-<!--        <div class="all-sort-list">-->
-<!--            <th:block th:each="category : ${categories}">-->
-<!--                <div class="item">-->
-<!--                    <h3><span>·</span><a href="##">-->
-<!--                        <th:block th:text="${category.categoryName}"></th:block>-->
-<!--                    </a></h3>-->
-<!--                    <div class="item-list clearfix">-->
-<!--                        <div class="subitem">-->
-<!--                            <th:block th:each="secondLevelCategory : ${category.secondLevelCategoryVOS}">-->
-<!--                                <dl class="fore1">-->
-<!--                                    <dt><a href="#">-->
-<!--                                        <th:block th:text="${secondLevelCategory.categoryName}"></th:block>-->
-<!--                                    </a></dt>-->
-<!--                                    <dd>-->
-<!--                                        <th:block-->
-<!--                                                th:each="thirdLevelCategory : ${secondLevelCategory.thirdLevelCategoryVOS}">-->
-<!--                                            <em><a href="#"-->
-<!--                                                   th:href="@{'/search?goodsCategoryId='+${thirdLevelCategory.categoryId}}">-->
-<!--                                                <th:block th:text="${thirdLevelCategory.categoryName}"></th:block>-->
-<!--                                            </a></em>-->
-<!--                                        </th:block>-->
-<!--                                    </dd>-->
-<!--                                </dl>-->
-<!--                            </th:block>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </th:block>-->
-<!--        </div>-->
-<!--        <div class="swiper-container fl">-->
-<!--            <div class="swiper-wrapper">-->
-<!--                &lt;!&ndash; 配置了轮播图则显示后台配置的轮播图 &ndash;&gt;-->
-<!--                <th:block th:unless="${#lists.isEmpty(carousels)}">-->
-<!--                    <th:block th:each="carousel : ${carousels}">-->
-<!--                        <div class="swiper-slide">-->
-<!--                            <a th:href="@{${carousel.redirectUrl}}">-->
-<!--                                <img alt="" th:src="@{${carousel.carouselUrl}}">-->
-<!--                            </a>-->
-<!--                        </div>-->
-<!--                    </th:block>-->
-<!--                </th:block>-->
-<!--                &lt;!&ndash; 未配置轮播图则显示默认的三张轮播图 &ndash;&gt;-->
-<!--                <th:block th:if="${#lists.isEmpty(carousels)}">-->
-<!--                    <div class="swiper-slide">-->
-<!--                        <img alt="" src="./mall/image/swiper/banner01.jpg">-->
-<!--                    </div>-->
-<!--                    <div class="swiper-slide">-->
-<!--                        <img alt="" src="./mall/image/swiper/banner02.jpg">-->
-<!--                    </div>-->
-<!--                    <div class="swiper-slide">-->
-<!--                        <img alt="" src="./mall/image/swiper/banner03.jpg">-->
-<!--                    </div>-->
-<!--                </th:block>-->
-<!--            </div>-->
-<!--            <div class="swiper-pagination"></div>-->
-<!--            <div class="swiper-button-prev"></div>-->
-<!--            <div class="swiper-button-next"></div>-->
-<!--        </div>-->
-<!--    </div>-->
+    <!--    <div id="banner">-->
+    <!--        <div class="all-sort-list">-->
+    <!--            <th:block th:each="category : ${categories}">-->
+    <!--                <div class="item">-->
+    <!--                    <h3><span>·</span><a href="##">-->
+    <!--                        <th:block th:text="${category.categoryName}"></th:block>-->
+    <!--                    </a></h3>-->
+    <!--                    <div class="item-list clearfix">-->
+    <!--                        <div class="subitem">-->
+    <!--                            <th:block th:each="secondLevelCategory : ${category.secondLevelCategoryVOS}">-->
+    <!--                                <dl class="fore1">-->
+    <!--                                    <dt><a href="#">-->
+    <!--                                        <th:block th:text="${secondLevelCategory.categoryName}"></th:block>-->
+    <!--                                    </a></dt>-->
+    <!--                                    <dd>-->
+    <!--                                        <th:block-->
+    <!--                                                th:each="thirdLevelCategory : ${secondLevelCategory.thirdLevelCategoryVOS}">-->
+    <!--                                            <em><a href="#"-->
+    <!--                                                   th:href="@{'/search?goodsCategoryId='+${thirdLevelCategory.categoryId}}">-->
+    <!--                                                <th:block th:text="${thirdLevelCategory.categoryName}"></th:block>-->
+    <!--                                            </a></em>-->
+    <!--                                        </th:block>-->
+    <!--                                    </dd>-->
+    <!--                                </dl>-->
+    <!--                            </th:block>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </th:block>-->
+    <!--        </div>-->
+    <!--        <div class="swiper-container fl">-->
+    <!--            <div class="swiper-wrapper">-->
+    <!--                &lt;!&ndash; 配置了轮播图则显示后台配置的轮播图 &ndash;&gt;-->
+    <!--                <th:block th:unless="${#lists.isEmpty(carousels)}">-->
+    <!--                    <th:block th:each="carousel : ${carousels}">-->
+    <!--                        <div class="swiper-slide">-->
+    <!--                            <a th:href="@{${carousel.redirectUrl}}">-->
+    <!--                                <img alt="" th:src="@{${carousel.carouselUrl}}">-->
+    <!--                            </a>-->
+    <!--                        </div>-->
+    <!--                    </th:block>-->
+    <!--                </th:block>-->
+    <!--                &lt;!&ndash; 未配置轮播图则显示默认的三张轮播图 &ndash;&gt;-->
+    <!--                <th:block th:if="${#lists.isEmpty(carousels)}">-->
+    <!--                    <div class="swiper-slide">-->
+    <!--                        <img alt="" src="./mall/image/swiper/banner01.jpg">-->
+    <!--                    </div>-->
+    <!--                    <div class="swiper-slide">-->
+    <!--                        <img alt="" src="./mall/image/swiper/banner02.jpg">-->
+    <!--                    </div>-->
+    <!--                    <div class="swiper-slide">-->
+    <!--                        <img alt="" src="./mall/image/swiper/banner03.jpg">-->
+    <!--                    </div>-->
+    <!--                </th:block>-->
+    <!--            </div>-->
+    <!--            <div class="swiper-pagination"></div>-->
+    <!--            <div class="swiper-button-prev"></div>-->
+    <!--            <div class="swiper-button-next"></div>-->
+    <!--        </div>-->
+    <!--    </div>-->
 
     <div id="sub_banner">
         <!-- 已配置热销商品则显示配置内容 -->
@@ -183,8 +183,8 @@
                             <p class="item_price" th:text="${recommendGoods.sellingPrice}">NewBeeMall</p>
                             <p class="counter">猜你喜欢</p>
                             <div class="comment">
-                                <p>新蜂精选</p>
-                                <p>好物也可以不贵</p>
+                                <p>精选</p>
+                                <p>OnlineGame</p>
                             </div>
                         </a>
                     </li>
@@ -346,7 +346,7 @@
         </ul>
     </div>
 </content>
-<div th:replace="~{mall/footer::footer-fragment}"></div>
+<!--<div th:replace="~{mall/footer::footer-fragment}"></div>-->
 <!-- jQuery -->
 <script th:src="@{/admin/plugins/jquery/jquery.min.js}"></script>
 <!-- Bootstrap 4 -->

@@ -5,19 +5,13 @@ import java.util.regex.Pattern;
 
 /**
  * 正则工具类
- *
- * @author 13
- * @qq交流群 796794009
- * @email 2449207463@qq.com
- * @link https://github.com/newbee-ltd
  */
 public class PatternUtil {
 
     /**
      * 匹配邮箱正则
      */
-    private static final Pattern VALID_EMAIL_ADDRESS_REGEX =
-            Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
+    private static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
     /**
      * 验证只包含中英文和数字的字符串
@@ -53,11 +47,7 @@ public class PatternUtil {
     public static boolean isURL(String urlString) {
         String regex = "^([hH][tT]{2}[pP]:/*|[hH][tT]{2}[pP][sS]:/*|[fF][tT][pP]:/*)(([A-Za-z0-9-~]+).)+([A-Za-z0-9-~\\/])+(\\?{0,1}(([A-Za-z0-9-~]+\\={0,1})([A-Za-z0-9-~]*)\\&{0,1})*)$";
         Pattern pattern = Pattern.compile(regex);
-        if (pattern.matcher(urlString).matches()) {
-            return true;
-        } else {
-            return false;
-        }
+        return pattern.matcher(urlString).matches();
     }
 
 }

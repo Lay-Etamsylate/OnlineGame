@@ -9,9 +9,9 @@
 package ltd.newbee.mall.controller.admin;
 
 import cn.hutool.captcha.ShearCaptcha;
-import ltd.newbee.mall.common.ServiceResultEnum;
 import ltd.newbee.mall.entity.AdminUser;
 import ltd.newbee.mall.service.AdminUserService;
+import ltd.newbee.mall.common.ServiceResultEnum;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;

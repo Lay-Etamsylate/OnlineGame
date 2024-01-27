@@ -1,5 +1,7 @@
 body {
-    background: #14212a;
+    /*background: #14212a;*/
+    background: url("../image/my_login_bg2.png") no-repeat center center;
+    background-size:cover;
 }
 
 .top {
@@ -21,7 +23,7 @@ body {
 .form {
     width: 1130px;
     height: 588px;
-    background: url("../image/login_bg.png") no-repeat center center;
+    /*background: url("../image/login_bg.png") no-repeat center center;*/
 }
 
 .form .login {
