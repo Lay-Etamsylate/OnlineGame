@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Gaming Like a Ninja</title>
+    <link href="https://cdn.jsdelivr.net/npm/blockrain@0.2.0/dist/blockrain.css" rel="stylesheet">
+    <meta content="width=device-width,initial-scale=1,user-scalable=no" name="viewport">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            color: #efefef;
+            line-height: 1.8;
+            padding-bottom: 6px;
+        }
+
+        .output_canvas {
+            display: block;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            margin: auto;
+        }
+
+        .input_video {
+            position: absolute;
+            pointer-events: none;
+        }
+
+        .game {
+            width: 400px;
+            flex-grow: 0;
+            flex-shrink: 0;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 98vh;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .preview-container {
+            padding: 24px 0;
+            width: 400px;
+            flex-grow: 0;
+            flex-shrink: 0;
+        }
+
+        .help {
+            padding: 24px 0;
+            width: 400px;
+            flex-grow: 0;
+            flex-shrink: 0;
+            font-size: 16px;
+            padding: 0 12px;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 4px 16px;
+            border: 1px solid #666;
+        }
+
+        @media screen and (max-width: 600px) {
+            .help, .preview-container, .game {
+                width: 100%;
+            }
+        }
+    </style>
+    <script crossorigin="anonymous"
+            src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js"></script>
+    <script crossorigin="anonymous"
+            src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+    <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+
+    <!-- <script src="/assets/@mediapipe/control_utils.js"></script>
+    <script src="/assets/@mediapipe/drawing_utils.js"></script>
+    <script src="/assets/@mediapipe/hands.js"></script> -->
+
+    <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/blockrain@0.2.0/dist/blockrain.jquery.min.js"></script>
+</head>
+
+<body>
+<div class="container" style="display:none">
+    <div class="preview-container">
+        <video class="input_video" style="display: none;"></video>
+        <canvas class="output_canvas"></canvas>
+        <p id="gesture-name" style="text-align: center;"></p>
+    </div>
+    <div class="game" style="width:450px; height:800px;"></div>
+    <div class="help">
+        Put your hand in front of camera
+        <br>
+        <br>
+        <table>
+            <tr>
+                <td>Thumb</td>
+                <td>Move Left</td>
+            </tr>
+            <tr>
+                <td>Index</td>
+                <td>Move Right</td>
+            </tr>
+            <tr>
+                <td>Index And Middle</td>
+                <td>Rotate</td>
+            </tr>
+            <tr>
+                <td>All Fingers</td>
+                <td>Drop</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<script src="app.js" type="module"></script>
+</body>
+</html>

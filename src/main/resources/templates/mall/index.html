@@ -73,7 +73,10 @@
         <th:block th:unless="${#lists.isEmpty(hotGoodses)}">
             <th:block th:each="hotGoodse : ${hotGoodses}">
                 <div class="hot-image">
-                    <a th:href="@{'/goods/detail/'+${hotGoodse.goodsId}}">
+<!--                    <a th:href="@{'/goods/detail/'+${hotGoodse.goodsId}}">-->
+<!--                        <img th:alt="${hotGoodse.goodsName}" th:src="@{${hotGoodse.goodsCoverImg}}">-->
+<!--                    </a>-->
+                    <a th:href="@{'./game/Tetris.html'}">
                         <img th:alt="${hotGoodse.goodsName}" th:src="@{${hotGoodse.goodsCoverImg}}">
                     </a>
                 </div>
