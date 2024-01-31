@@ -29,7 +29,8 @@
                                         id="levelOne">
                                     <th:block th:unless="${null == firstLevelCategories}">
                                         <th:block th:each="c : ${firstLevelCategories}">
-                                            <option th:selected="${null !=firstLevelCategoryId and firstLevelCategoryId==c.categoryId} ?true:false" th:text="${c.categoryName}"
+                                            <option th:selected="${null !=firstLevelCategoryId and firstLevelCategoryId==c.categoryId} ?true:false"
+                                                    th:text="${c.categoryName}"
                                                     th:value="${c.categoryId}">
                                                 >
                                             </option>
@@ -41,7 +42,8 @@
                                         id="levelTwo">
                                     <th:block th:unless="${null == secondLevelCategories}">
                                         <th:block th:each="c : ${secondLevelCategories}">
-                                            <option th:selected="${null !=secondLevelCategoryId and secondLevelCategoryId==c.categoryId} ?true:false" th:text="${c.categoryName}"
+                                            <option th:selected="${null !=secondLevelCategoryId and secondLevelCategoryId==c.categoryId} ?true:false"
+                                                    th:text="${c.categoryName}"
                                                     th:value="${c.categoryId}">
                                                 >
                                             </option>
@@ -53,7 +55,8 @@
                                         id="levelThree">
                                     <th:block th:unless="${null == thirdLevelCategories}">
                                         <th:block th:each="c : ${thirdLevelCategories}">
-                                            <option th:selected="${null !=thirdLevelCategoryId and thirdLevelCategoryId==c.categoryId} ?true:false" th:text="${c.categoryName}"
+                                            <option th:selected="${null !=thirdLevelCategoryId and thirdLevelCategoryId==c.categoryId} ?true:false"
+                                                    th:text="${c.categoryName}"
                                                     th:value="${c.categoryId}">
                                                 >
                                             </option>
@@ -62,48 +65,55 @@
                                 </select>
                             </div>
                             <div class="form-group" style="display:flex;">
-                                <input id="goodsId" name="goodsId" th:value="${goods!=null and goods.goodsId!=null }?${goods.goodsId}: 0"
+                                <input id="goodsId" name="goodsId"
+                                       th:value="${goods!=null and goods.goodsId!=null }?${goods.goodsId}: 0"
                                        type="hidden">
-                                <input class="form-control col-sm-6" id="goodsName" name="goodsName" placeholder="*请输入商品名称(必填)"
+                                <input class="form-control col-sm-6" id="goodsName" name="goodsName"
+                                       placeholder="*请输入游戏名称(必填)"
                                        required="true"
                                        th:value="${goods!=null and goods.goodsName!=null }?${goods.goodsName}: ''"
                                        type="text">
                                 &nbsp;&nbsp;
-                                <input class="form-control col-sm-6" id="goodsIntro" name="goodsIntro" placeholder="*请输入商品简介(100字以内)"
+                                <input class="form-control col-sm-6" id="goodsIntro" name="goodsIntro"
+                                       placeholder="*请输入游戏简介(100字以内)"
                                        required="true"
                                        th:value="${goods!=null and goods.goodsIntro!=null }?${goods.goodsIntro}: ''"
                                        type="text">
                             </div>
-                            <div class="form-group" style="display:flex;">
-                                <input class="form-control col-sm-6" id="originalPrice" name="originalPrice"
-                                       placeholder="*请输入商品价格"
-                                       required="true"
-                                       th:value="${goods!=null and goods.originalPrice!=null }?${goods.originalPrice}: 1"
-                                       type="number">
-                                &nbsp;&nbsp;
-                                <input class="form-control col-sm-6" id="sellingPrice" name="sellingPrice"
-                                       placeholder="*请输入商品售卖价"
-                                       required="true"
-                                       th:value="${goods!=null and goods.sellingPrice!=null }?${goods.sellingPrice}: 1"
-                                       type="number">
-                            </div>
-                            <div class="form-group" style="display:flex;">
-                                <input class="form-control col-sm-6" id="stockNum" name="stockNum" placeholder="*请输入商品库存数"
-                                       required="true"
-                                       th:value="${goods!=null and goods.stockNum!=null }?${goods.stockNum}: 0"
-                                       type="number">
-                                &nbsp;&nbsp;
-                                <input class="form-control col-sm-6" id="tag" name="tag" placeholder="*请输入商品小标签"
-                                       required="true"
-                                       th:value="${goods!=null and goods.tag!=null }?${goods.tag}: ''"
-                                       type="text">
-                            </div>
+<!--                            <div class="form-group" style="display:flex;">-->
+<!--                                <input class="form-control col-sm-6" id="originalPrice" name="originalPrice"-->
+<!--                                       placeholder="*请输入商品价格"-->
+<!--                                       required="true"-->
+<!--                                       th:value="${goods!=null and goods.originalPrice!=null }?${goods.originalPrice}: 1"-->
+<!--                                       type="number">-->
+<!--                                &nbsp;&nbsp;-->
+<!--                                <input class="form-control col-sm-6" id="sellingPrice" name="sellingPrice"-->
+<!--                                       placeholder="*请输入商品售卖价"-->
+<!--                                       required="true"-->
+<!--                                       th:value="${goods!=null and goods.sellingPrice!=null }?${goods.sellingPrice}: 1"-->
+<!--                                       type="number">-->
+<!--                            </div>-->
+<!--                            <div class="form-group" style="display:flex;">-->
+<!--                                <input class="form-control col-sm-6" id="stockNum" name="stockNum"-->
+<!--                                       placeholder="*请输入商品库存数"-->
+<!--                                       required="true"-->
+<!--                                       th:value="${goods!=null and goods.stockNum!=null }?${goods.stockNum}: 0"-->
+<!--                                       type="number">-->
+<!--                                &nbsp;&nbsp;-->
+<!--                                <input class="form-control col-sm-6" id="tag" name="tag" placeholder="*请输入商品小标签"-->
+<!--                                       required="true"-->
+<!--                                       th:value="${goods!=null and goods.tag!=null }?${goods.tag}: ''"-->
+<!--                                       type="text">-->
+<!--                            </div>-->
                             <div class="form-group">
                                 <label class="control-label">上架状态:&nbsp;</label>
-                                <input checked=true id="goodsSellStatusTrue" name="goodsSellStatus" th:checked="${null==goods||(null !=goods and null !=goods.goodsSellStatus and goods.goodsSellStatus==0)} ?true:false"
+                                <input checked=true id="goodsSellStatusTrue" name="goodsSellStatus"
+                                       th:checked="${null==goods||(null !=goods and null !=goods.goodsSellStatus and goods.goodsSellStatus==0)} ?true:false"
                                        type="radio"
                                        value="0"/>&nbsp;上架&nbsp;
-                                <input id="goodsSellStatusFalse" name="goodsSellStatus" th:checked="${null !=goods and null !=goods.goodsSellStatus and goods.goodsSellStatus==1} ?true:false" type="radio"
+                                <input id="goodsSellStatusFalse" name="goodsSellStatus"
+                                       th:checked="${null !=goods and null !=goods.goodsSellStatus and goods.goodsSellStatus==1} ?true:false"
+                                       type="radio"
                                        value="1"/>&nbsp;下架&nbsp;
                             </div>
                             <div class="form-group">
@@ -124,25 +134,26 @@
                                     <div class="col-sm-4">
                                         <button class="btn btn-info" id="uploadGoodsCoverImg"
                                                 style="margin-bottom: 5px;">
-                                            <i class="fa fa-picture-o"></i>&nbsp;上传商品主图
+                                            <i class="fa fa-picture-o"></i>&nbsp;上传游戏主图
                                         </button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group" style="border: 1px solid #ccc;z-index: 1100;">
-                                <div class="editor-toolbar" id="editor-toolbar"
-                                     style="border-bottom: 1px solid #ccc;"></div>
-                                <input class="editor-text" th:value="${goods!=null and goods.goodsDetailContent !=null}?${goods.goodsDetailContent}: ''"
-                                       type="hidden">
-                                <div class="editor-text-area" id="editor-text-area" style="height: 750px"></div>
-                            </div>
+<!--                            <div class="form-group" style="border: 1px solid #ccc;z-index: 1100;">-->
+<!--                                <div class="editor-toolbar" id="editor-toolbar"-->
+<!--                                     style="border-bottom: 1px solid #ccc;"></div>-->
+<!--                                <input class="editor-text"-->
+<!--                                       th:value="${goods!=null and goods.goodsDetailContent !=null}?${goods.goodsDetailContent}: ''"-->
+<!--                                       type="hidden">-->
+<!--                                <div class="editor-text-area" id="editor-text-area" style="height: 750px"></div>-->
+<!--                            </div>-->
                             <div class="form-group">
                                 <!-- 按钮 -->
                                 &nbsp;<button class="btn btn-info float-right" id="saveButton"
-                                              style="margin-left: 5px;">保存商品
+                                              style="margin-left: 5px;">保存游戏
                             </button>&nbsp;
                                 &nbsp;<button class="btn btn-secondary float-right" id="cancelButton"
-                                              style="margin-left: 5px;">返回商品列表
+                                              style="margin-left: 5px;">返回游戏列表
                             </button>&nbsp;
                             </div>
                         </form>
@@ -154,7 +165,7 @@
     </div>
     <!-- /.content-wrapper -->
     <!-- 引入页脚footer-fragment -->
-    <div th:replace="~{admin/footer::footer-fragment}"></div>
+<!--    <div th:replace="~{admin/footer::footer-fragment}"></div>-->
 </div>
 <!-- jQuery -->
 <script th:src="@{/admin/plugins/jquery/jquery.min.js}"></script>

@@ -33,15 +33,7 @@ function validLength(obj, length) {
  * @returns {boolean}
  */
 function isURL(str_url) {
-    var strRegex = "^((https|http|ftp|rtsp|mms)?://)"
-        + "(([0-9]{1,3}\.){3}[0-9]{1,3}"
-        + "|"
-        + "([0-9a-zA-Z_!~*'()-]+\.)*"
-        + "([0-9a-zA-Z][0-9a-zA-Z-]{0,61})?[0-9a-zA-Z]\."
-        + "[a-zA-Z]{2,6})"
-        + "(:[0-9]{1,4})?"
-        + "((/?)|"
-        + "(/[0-9a-zA-Z_!~*'().;?:@&=+$,%#-]+)+/?)$";
+    var strRegex = "^((https|http|ftp|rtsp|mms)?://)" + "(([0-9]{1,3}\.){3}[0-9]{1,3}" + "|" + "([0-9a-zA-Z_!~*'()-]+\.)*" + "([0-9a-zA-Z][0-9a-zA-Z-]{0,61})?[0-9a-zA-Z]\." + "[a-zA-Z]{2,6})" + "(:[0-9]{1,4})?" + "((/?)|" + "(/[0-9a-zA-Z_!~*'().;?:@&=+$,%#-]+)+/?)$";
     var re = new RegExp(strRegex);
     if (re.test(str_url)) {
         return (true);
@@ -132,16 +124,14 @@ function getSelectedRow() {
     var rowKey = grid.getGridParam("selrow");
     if (!rowKey) {
         Swal.fire({
-            text: "请选择一条记录",
-            icon: "warning",iconColor:"#dea32c",
+            text: "请选择一条记录", icon: "warning", iconColor: "#dea32c",
         });
         return;
     }
     var selectedIDs = grid.getGridParam("selarrrow");
     if (selectedIDs.length > 1) {
         Swal.fire({
-            text: "只能选择一条记录",
-            icon: "warning",iconColor:"#dea32c",
+            text: "只能选择一条记录", icon: "warning", iconColor: "#dea32c",
         });
         return;
     }
@@ -174,8 +164,7 @@ function getSelectedRows() {
     var rowKey = grid.getGridParam("selrow");
     if (!rowKey) {
         Swal.fire({
-            text: "请选择一条记录",
-            icon: "warning",iconColor:"#dea32c",
+            text: "请选择一条记录", icon: "warning", iconColor: "#dea32c",
         });
         return;
     }

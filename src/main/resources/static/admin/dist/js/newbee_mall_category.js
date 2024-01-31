@@ -5,12 +5,19 @@ $(function () {
     $("#jqGrid").jqGrid({
         url: '/admin/categories/list?categoryLevel=' + categoryLevel + '&parentId=' + parentId,
         datatype: "json",
-        colModel: [
-            {label: 'id', name: 'categoryId', index: 'categoryId', width: 50, key: true, hidden: true},
-            {label: '分类名称', name: 'categoryName', index: 'categoryName', width: 240},
-            {label: '排序值', name: 'categoryRank', index: 'categoryRank', width: 120},
-            {label: '添加时间', name: 'createTime', index: 'createTime', width: 120}
-        ],
+        colModel: [{
+            label: 'id',
+            name: 'categoryId',
+            index: 'categoryId',
+            width: 50,
+            key: true,
+            hidden: true
+        }, {label: '分类名称', name: 'categoryName', index: 'categoryName', width: 240}, {
+            label: '排序值',
+            name: 'categoryRank',
+            index: 'categoryRank',
+            width: 120
+        }, {label: '添加时间', name: 'createTime', index: 'createTime', width: 120}],
         height: 560,
         rowNum: 10,
         rowList: [10, 20, 50],
@@ -22,15 +29,10 @@ $(function () {
         multiselect: true,
         pager: "#jqGridPager",
         jsonReader: {
-            root: "data.list",
-            page: "data.currPage",
-            total: "data.totalPage",
-            records: "data.totalCount"
+            root: "data.list", page: "data.currPage", total: "data.totalPage", records: "data.totalCount"
         },
         prmNames: {
-            page: "page",
-            rows: "limit",
-            order: "order",
+            page: "page", rows: "limit", order: "order",
         },
         gridComplete: function () {
             //隐藏grid底部滚动条
@@ -74,8 +76,7 @@ function categoryManage() {
         window.location.href = '/admin/categories?categoryLevel=' + categoryLevel + '&parentId=' + id + '&backParentId=' + parentId;
     } else {
         Swal.fire({
-            text: "无下级分类",
-            icon: "warning",iconColor:"#dea32c",
+            text: "无下级分类", icon: "warning", iconColor: "#dea32c",
         });
     }
 }
@@ -91,8 +92,7 @@ function categoryBack() {
         window.location.href = '/admin/categories?categoryLevel=' + categoryLevel + '&parentId=' + backParentId + '&backParentId=0';
     } else {
         Swal.fire({
-            text: "无上级分类",
-            icon: "warning",iconColor:"#dea32c",
+            text: "无上级分类", icon: "warning", iconColor: "#dea32c",
         });
     }
 }
@@ -127,30 +127,23 @@ $('#saveButton').click(function () {
         }
         $.ajax({
             type: 'POST',//方法类型
-            url: url,
-            contentType: 'application/json',
-            data: JSON.stringify(data),
-            success: function (result) {
+            url: url, contentType: 'application/json', data: JSON.stringify(data), success: function (result) {
                 if (result.resultCode == 200) {
                     $('#categoryModal').modal('hide');
                     Swal.fire({
-                        text: "保存成功",
-                        icon: "success",iconColor:"#1d953f",
+                        text: "保存成功", icon: "success", iconColor: "#1d953f",
                     });
                     reload();
                 } else {
                     $('#categoryModal').modal('hide');
                     Swal.fire({
-                        text: result.message,
-                        icon: "error",iconColor:"#f05b72",
+                        text: result.message, icon: "error", iconColor: "#f05b72",
                     });
                 }
-                ;
-            },
-            error: function () {
+
+            }, error: function () {
                 Swal.fire({
-                    text: "操作失败",
-                    icon: "error",iconColor:"#f05b72",
+                    text: "操作失败", icon: "error", iconColor: "#f05b72",
                 });
             }
         });
@@ -185,36 +178,33 @@ function deleteCagegory() {
     Swal.fire({
         title: "确认弹框",
         text: "确认要删除数据吗?",
-        icon: "warning",iconColor:"#dea32c",
+        icon: "warning",
+        iconColor: "#dea32c",
         showCancelButton: true,
         confirmButtonText: '确认',
         cancelButtonText: '取消'
     }).then((flag) => {
-            if (flag.value) {
-                $.ajax({
-                    type: "POST",
-                    url: "/admin/categories/delete",
-                    contentType: "application/json",
-                    data: JSON.stringify(ids),
-                    success: function (r) {
-                        if (r.resultCode == 200) {
-                            Swal.fire({
-                                text: "删除成功",
-                                icon: "success",iconColor:"#1d953f",
-                            });
-                            $("#jqGrid").trigger("reloadGrid");
-                        } else {
-                            Swal.fire({
-                                text: r.message,
-                                icon: "error",iconColor:"#f05b72",
-                            });
-                        }
+        if (flag.value) {
+            $.ajax({
+                type: "POST",
+                url: "/admin/categories/delete",
+                contentType: "application/json",
+                data: JSON.stringify(ids),
+                success: function (r) {
+                    if (r.resultCode == 200) {
+                        Swal.fire({
+                            text: "删除成功", icon: "success", iconColor: "#1d953f",
+                        });
+                        $("#jqGrid").trigger("reloadGrid");
+                    } else {
+                        Swal.fire({
+                            text: r.message, icon: "error", iconColor: "#f05b72",
+                        });
                     }
-                });
-            }
+                }
+            });
         }
-    )
-    ;
+    });
 }
 
 
