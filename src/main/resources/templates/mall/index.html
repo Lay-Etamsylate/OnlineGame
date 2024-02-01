@@ -75,7 +75,7 @@
 <!--                    <a th:href="@{'/goods/detail/'+${hotGoodse.goodsId}}">-->
 <!--                        <img th:alt="${hotGoodse.goodsName}" th:src="@{${hotGoodse.goodsCoverImg}}">-->
 <!--                    </a>-->
-                    <a th:href="@{'./game/Tetris.html'}">
+                    <a th:href="@{'/game/Tetris'}">
                         <img th:alt="${hotGoodse.goodsName}" th:src="@{${hotGoodse.goodsCoverImg}}">
                     </a>
                 </div>
@@ -117,7 +117,7 @@
                             <img th:alt="${newGoods.goodsName}" th:src="@{${newGoods.goodsCoverImg}}">
                             <p class="name" th:text="${newGoods.goodsName}">NewBeeMall</p>
                             <p class="discount" th:text="${newGoods.goodsIntro}">NewBeeMall</p>
-                            <p class="item_price" th:text="${newGoods.sellingPrice}">NewBeeMall</p>
+<!--                            <p class="item_price" th:text="${newGoods.sellingPrice}">NewBeeMall</p>-->
                         </a>
                     </li>
                 </th:block>
@@ -182,7 +182,7 @@
                             </div>
                             <img th:alt="${recommendGoods.goodsName}" th:src="@{${recommendGoods.goodsCoverImg}}">
                             <p class="name" th:text="${recommendGoods.goodsName}">NewBeeMall</p>
-                            <p class="item_price" th:text="${recommendGoods.sellingPrice}">NewBeeMall</p>
+<!--                            <p class="item_price" th:text="${recommendGoods.sellingPrice}">NewBeeMall</p>-->
                             <p class="counter">猜你喜欢</p>
                             <div class="comment">
                                 <p>精选</p>
