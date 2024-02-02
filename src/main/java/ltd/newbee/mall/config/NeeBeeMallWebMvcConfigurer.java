@@ -27,6 +27,7 @@ public class NeeBeeMallWebMvcConfigurer implements WebMvcConfigurer {
         registry.addInterceptor(newBeeMallCartNumberInterceptor).excludePathPatterns("/admin/**").excludePathPatterns("/register").excludePathPatterns("/login").excludePathPatterns("/logout");
         // 商城页面登陆拦截
         registry.addInterceptor(newBeeMallLoginInterceptor).excludePathPatterns("/admin/**").excludePathPatterns("/register").excludePathPatterns("/login").excludePathPatterns("/logout").addPathPatterns("/goods/detail/**").addPathPatterns("/shop-cart").addPathPatterns("/shop-cart/**").addPathPatterns("/saveOrder").addPathPatterns("/orders").addPathPatterns("/orders/**").addPathPatterns("/personal").addPathPatterns("/personal/updateInfo").addPathPatterns("/selectPayType").addPathPatterns("/payPage");
+        registry.addInterceptor(newBeeMallLoginInterceptor).addPathPatterns("/game/**");
     }
 
     public void addResourceHandlers(ResourceHandlerRegistry registry) {

@@ -1,7 +1,9 @@
 body {
     /*background: #14212a;*/
     background: url("../image/my_login_bg2.png") no-repeat center center;
-    background-size:cover;
+    background-attachment: fixed;
+    /* 让背景图基于容器大小伸缩 */
+    background-size: cover;
 }
 
 .top {
