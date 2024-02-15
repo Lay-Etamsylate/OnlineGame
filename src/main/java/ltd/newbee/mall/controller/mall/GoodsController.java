@@ -77,6 +77,9 @@ public class GoodsController {
         BeanUtil.copyProperties(goods, goodsDetailVO);
         goodsDetailVO.setGoodsCarouselList(goods.getGoodsCarousel().split(","));
         request.setAttribute("goodsDetail", goodsDetailVO);
+
+        request.setAttribute("gameId",goodsId);
+
         return "mall/detail";
     }
 

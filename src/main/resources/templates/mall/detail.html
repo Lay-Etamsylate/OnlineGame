@@ -37,7 +37,7 @@
                 <!--                       value="立即选购"/>-->
                 <!--                <input class="car" th:onclick="'saveToCart('+${goodsDetail.goodsId}+')'" type="button"-->
                 <!--                       value="立即游玩"/>-->
-                <a href="/game/Tetris">
+                <a th:href="@{'/game/'+${goodsDetail.goodsId}}">
                     <button class="car">立即游玩</button>
                 </a>
             </div>
