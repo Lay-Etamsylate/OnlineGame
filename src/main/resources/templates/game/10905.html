@@ -1,7 +1,7 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,400,800" rel="stylesheet">
 
-    <link href="https://cdn.jsdelivr.net/npm/blockrain@0.2.0/dist/blockrain.css" rel="stylesheet">
+<!--    <link href="https://cdn.jsdelivr.net/npm/blockrain@0.2.0/dist/blockrain.css" rel="stylesheet">-->
     <meta content="width=device-width,initial-scale=1,user-scalable=no" name="viewport">
 
     <style>
@@ -211,7 +211,7 @@
         }
 
 
-
+        /*以下有关识别模块*/
         .output_canvas {
             display: block;
             max-width: 100%;
@@ -228,6 +228,9 @@
             width: 400px;
             flex-grow: 0;
             flex-shrink: 0;
+
+            position:relative;
+            left:-450px;
         }
         @media screen and (max-width: 600px) {
             .help, .preview-container, .game {
@@ -243,7 +246,7 @@
             src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
     <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
     <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/2.2.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/blockrain@0.2.0/dist/blockrain.jquery.min.js"></script>
+<!--    <script src="https://cdn.jsdelivr.net/npm/blockrain@0.2.0/dist/blockrain.jquery.min.js"></script>-->
 
 </head>
 
@@ -256,6 +259,7 @@
         </div>
         <div class="score">Score<br/><span id="value"></span></div>
     </div>
+
 <!--    <div class="description" id="description">-->
 <!--        How to play:<br/><br/>-->
 <!--        Use your arrow-keys to slide the tiles. <br/>-->
@@ -266,13 +270,15 @@
 <!--        Made by Fabian Richter 01/2017-->
 <!--    </div>-->
 
-    <div class="preview-container">
-        <video class="input_video" style="display: none;"></video>
-        <canvas class="output_canvas"></canvas>
-        <p id="gesture-name" style="text-align: center;"></p>
-    </div>
+
 
     <div class="field">
+
+        <div class="preview-container">
+            <video class="input_video" style="display: none;"></video>
+            <canvas class="output_canvas"></canvas>
+            <p id="gesture-name" style="text-align: center;"></p>
+        </div>
 
         <div class="row">
             <div class="cell"></div>

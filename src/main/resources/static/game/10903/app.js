@@ -35,7 +35,7 @@ let lastGesture = '';
 
 function virtualKeyboard(gesture) {
     const now = Date.now();
-    if (lastGesture === gesture && lastGestureTime > now - 3000) {
+    if (lastGesture === gesture && lastGestureTime > now - 300) {
         // 同样的手势最多每300ms触发一次
         return;
     }
@@ -52,17 +52,17 @@ function virtualKeyboard(gesture) {
 
     switch (gesture) {
         case 'all':
-            dispatchKey(37);
+            dispatchKey(65);
             break;
-        case 'thumb':
-            dispatchKey(38);
-            break;
-        case 'index':
-            dispatchKey(39);
-            break;
-        case 'index_and_middle':
-            dispatchKey(40);
-            break;
+        // case 'thumb':
+        //     dispatchKey(38);
+        //     break;
+        // case 'index':
+        //     dispatchKey(39);
+        //     break;
+        // case 'index_and_middle':
+        //     dispatchKey(40);
+        //     break;
     }
 }
 
