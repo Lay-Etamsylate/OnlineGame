@@ -1,4 +1,4 @@
-const svmWorker = new Worker('./10906/svm_worker.js');
+const svmWorker = new Worker('./10905/svm_worker.js');
 
 const videoElement = document.getElementsByClassName('input_video')[0];
 const canvasElement = document.getElementsByClassName('output_canvas')[0];
