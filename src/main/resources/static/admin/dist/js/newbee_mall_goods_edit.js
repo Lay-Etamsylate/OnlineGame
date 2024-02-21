@@ -46,13 +46,13 @@ $(function () {
         }
     }
 
-    editor = E.createEditor({
-        selector: '#editor-text-area', html: $(".editor-text").val(), config: editorConfig
-    })
+    // editor = E.createEditor({
+    //     selector: '#editor-text-area', html: $(".editor-text").val(), config: editorConfig
+    // })
 
-    const toolbar = E.createToolbar({
-        editor, selector: '#editor-toolbar',
-    })
+    // const toolbar = E.createToolbar({
+    //     editor, selector: '#editor-toolbar',
+    // })
 
     //图片上传插件初始化 用于商品预览图上传
     new AjaxUpload('#uploadGoodsCoverImg', {
@@ -61,6 +61,7 @@ $(function () {
         autoSubmit: true,
         responseType: "json",
         onSubmit: function (file, extension) {
+            console.log(111)
             if (!(extension && /^(jpg|jpeg|png|gif)$/.test(extension.toLowerCase()))) {
                 Swal.fire({
                     text: "只支持jpg、png、gif格式的文件！", icon: "error", iconColor: "#f05b72",
@@ -69,6 +70,7 @@ $(function () {
             }
         },
         onComplete: function (file, r) {
+            console.log(111)
             if (r != null && r.resultCode == 200) {
                 $("#goodsCoverImg").attr("src", r.data);
                 $("#goodsCoverImg").attr("style", "width: 128px;height: 128px;display:block;");

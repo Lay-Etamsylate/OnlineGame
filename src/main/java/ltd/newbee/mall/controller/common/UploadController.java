@@ -1,11 +1,3 @@
-/**
- * 严肃声明：
- * 开源版本请务必保留此注释头信息，若删除我方将保留所有法律责任追究！
- * 本系统已申请软件著作权，受国家版权局知识产权以及国家计算机软件著作权保护！
- * 可正常分享和学习源码，不得用于违法犯罪活动，违者必究！
- * Copyright (c) 2019-2020 十三 all rights reserved.
- * 版权所有，侵权必究！
- */
 package ltd.newbee.mall.controller.common;
 
 import ltd.newbee.mall.common.Constants;
@@ -24,7 +16,9 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 
 import javax.imageio.ImageIO;
+
 import jakarta.servlet.http.HttpServletRequest;
+
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -33,12 +27,6 @@ import java.net.URISyntaxException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-/**
- * @author 13
- * @qq交流群 796794009
- * @email 2449207463@qq.com
- * @link https://github.com/newbee-ltd
- */
 @Controller
 @RequestMapping("/admin")
 public class UploadController {
@@ -58,9 +46,7 @@ public class UploadController {
         //生成文件名称通用方法
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss");
         Random r = new Random();
-        StringBuilder tempName = new StringBuilder();
-        tempName.append(sdf.format(new Date())).append(r.nextInt(100)).append(suffixName);
-        String newFileName = tempName.toString();
+        String newFileName = sdf.format(new Date()) + r.nextInt(100) + suffixName;
         File fileDirectory = new File(Constants.FILE_UPLOAD_DIC);
         //创建文件
         File destFile = new File(Constants.FILE_UPLOAD_DIC + newFileName);
@@ -70,6 +56,9 @@ public class UploadController {
                     throw new IOException("文件夹创建失败,路径为：" + fileDirectory);
                 }
             }
+            fileDirectory.setWritable(true, false);
+            fileDirectory.setReadable(true, false);
+            fileDirectory.setExecutable(true, false);
             file.transferTo(destFile);
             Result resultSuccess = ResultGenerator.genSuccessResult();
             resultSuccess.setData(NewBeeMallUtils.getHost(new URI(httpServletRequest.getRequestURL() + "")) + "/upload/" + newFileName);
@@ -114,9 +103,7 @@ public class UploadController {
             //生成文件名称通用方法
             SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss");
             Random r = new Random();
-            StringBuilder tempName = new StringBuilder();
-            tempName.append(sdf.format(new Date())).append(r.nextInt(100)).append(suffixName);
-            String newFileName = tempName.toString();
+            String newFileName = sdf.format(new Date()) + r.nextInt(100) + suffixName;
             File fileDirectory = new File(Constants.FILE_UPLOAD_DIC);
             //创建文件
             File destFile = new File(Constants.FILE_UPLOAD_DIC + newFileName);
@@ -126,6 +113,9 @@ public class UploadController {
                         throw new IOException("文件夹创建失败,路径为：" + fileDirectory);
                     }
                 }
+                fileDirectory.setWritable(true, false);
+                fileDirectory.setReadable(true, false);
+                fileDirectory.setExecutable(true, false);
                 multipartFiles.get(i).transferTo(destFile);
                 fileNames.add(NewBeeMallUtils.getHost(new URI(httpServletRequest.getRequestURL() + "")) + "/upload/" + newFileName);
             } catch (IOException e) {

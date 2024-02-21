@@ -100,6 +100,8 @@ async function requestCam() {
             height: {min: 720, ideal: 720, max: 1280},
             frameRate: {ideal: 30}
         }, audio: false
+    }).catch(function (error){
+        console.log(error)
     });
     const tracks = stream.getVideoTracks();
     const settings = tracks[0].getSettings();
@@ -113,6 +115,7 @@ async function initApp() {
     try {
         camRes = await requestCam();
     } catch (e) {
+        console.log(e)
         return alert('cannot open camera');
     }
 
