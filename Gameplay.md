@@ -1,38 +1,20 @@
-测试网址：http://120.26.63.205:28089
+测试网址：https://120.26.38.216:28089
 
-测试浏览器：Chrome
+测试浏览器：Chrome、Edge
 
+### 注意事项
 
-
-**如遇报错：cannot open camera**
-
-原因：浏览器为了安全，http协议获取不到摄像头权限 
-解决方案：修改浏览器设置 
-地址栏输入
-
-```
-chrome://flags/#unsafely-treat-insecure-origin-as-secure
-```
-
-在横线处输入
-
-```
-http://120.26.63.205:28089
-```
-
-选择Enabled
-点击relaunch
+**第一次进入游戏摄像头开启较慢，需等待30s左右**
 
 
-
-
-
-Thumb：拇指 
-Index：食指 
-Index And Middle：食指和中指（比耶手势） 
-All Fingers：五指张开
 
 ### 操作指南
+
+**Thumb：拇指** 
+**Index：食指** 
+**Index And Middle：食指和中指（比耶手势）** 
+**All Fingers：五指张开**
+
 #### 2048
 Thumb 向上 
 Index 向右 
