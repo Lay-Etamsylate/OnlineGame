@@ -142,7 +142,7 @@ async function initApp() {
     });
 
     hands.setOptions({
-        maxNumHands: 2, modelComplexity: 1, minDetectionConfidence: 0.5, minTrackingConfidence: 0.5
+        maxNumHands: 1, modelComplexity: 1, minDetectionConfidence: 0.5, minTrackingConfidence: 0.5
     });
 
     hands.onResults(onResults);
