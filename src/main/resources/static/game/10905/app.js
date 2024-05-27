@@ -35,8 +35,10 @@ let lastGesture = '';
 
 function virtualKeyboard(gesture) {
     const now = Date.now();
-    if (lastGesture === gesture && lastGestureTime > now - 3000) {
-        // 同样的手势最多每300ms触发一次
+    if (lastGesture === gesture && lastGestureTime > now - 1500) {
+        // 同样的手势最多每1500ms触发一次
+        return;
+    } else if (lastGesture != gesture && lastGestureTime > now - 1500) {
         return;
     }
 

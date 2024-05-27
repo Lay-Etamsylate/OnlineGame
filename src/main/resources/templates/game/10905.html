@@ -2,7 +2,9 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,400,800" rel="stylesheet">
 
 <!--    <link href="https://cdn.jsdelivr.net/npm/blockrain@0.2.0/dist/blockrain.css" rel="stylesheet">-->
-    <meta content="width=device-width,initial-scale=1,user-scalable=no" name="viewport">
+<!--    <meta content="width=device-width,initial-scale=1,user-scalable=no" name="viewport">-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+
 
     <style>
         body {
@@ -212,6 +214,19 @@
 
 
         /*以下有关识别模块*/
+
+        .help {
+            padding: 24px 0;
+            width: 400px;
+            flex-grow: 0;
+            flex-shrink: 0;
+            font-size: 16px;
+            /*padding: 0 12px;*/
+
+            position:relative;
+            left:-450px;
+        }
+
         .output_canvas {
             display: block;
             max-width: 100%;
@@ -231,6 +246,7 @@
 
             position:relative;
             left:-450px;
+            /*font-size: 25px;*/
         }
         @media screen and (max-width: 600px) {
             .help, .preview-container, .game {
@@ -278,7 +294,34 @@
             <video class="input_video" style="display: none;"></video>
             <canvas class="output_canvas"></canvas>
             <p id="gesture-name" style="text-align: center;"></p>
+            <br>
+            <br>
+            <h4>将手放在相机前</h4>
+            <br>
+            <br>
+            <table style="font-size: 20px;">
+                <tr>
+                    <td>拇指</td>
+                    <td>向上操作</td>
+                </tr>
+                <tr>
+                    <td>食指</td>
+                    <td>向右操作</td>
+                </tr>
+                <tr>
+                    <td>比耶</td>
+                    <td>向下操作</td>
+                </tr>
+                <tr>
+                    <td>五指张开</td>
+                    <td>向左操作</td>
+                </tr>
+            </table>
         </div>
+
+<!--        <div class="help">-->
+<!--            -->
+<!--        </div>-->
 
         <div class="row">
             <div class="cell"></div>
@@ -305,7 +348,6 @@
             <div class="cell"></div>
         </div>
     </div>
-
 </div>
 <div class='' id='status'></div>
 <script th:src="@{/game/10905/app.js}" type="module"></script>

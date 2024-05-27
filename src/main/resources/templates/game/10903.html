@@ -2,7 +2,8 @@
 <head>
     <meta charset="utf-8">
     <title>Gaming Like a Ninja</title>
-    <meta content="width=device-width,initial-scale=1,user-scalable=no" name="viewport">
+<!--    <meta content="width=device-width,initial-scale=1,user-scalable=no" name="viewport">-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
     <style>
         /* Load the flappybird font from an external source */
         @font-face {
@@ -239,12 +240,14 @@
 
         .preview-container {
             padding: 24px 0;
-            width: 400px;
+            width: 350px;
             flex-grow: 0;
             flex-shrink: 0;
 
             position:relative;
-            left:-40%;
+            left:-37%;
+
+            /*font-size: 25px;*/
         }
 
         .help {
@@ -309,6 +312,19 @@
         <video class="input_video" style="display: none;"></video>
         <canvas class="output_canvas"></canvas>
         <p id="gesture-name" style="text-align: center;"></p>
+
+        <br>
+        <br>
+        <h4>将手放在相机前</h4>
+        <br>
+        <br>
+        <table style="font-size: 20px;">
+            <tr>
+                <td>五指张开</td>
+                <td>飞翔</td>
+            </tr>
+        </table>
+
     </div>
 
     <div style="position: absolute; left: 50%; top: 50%;">
@@ -493,7 +509,7 @@
             this.fall = function () {
                 if (!jumping) { //Check if we're jumping
                     //If we're currently not jumping
-                    selectorObject.stop().animate({top: '+=' + gravVeloc + '%'}, 30, 'linear'); //Stop any current animations and then drop the bird by Velocity%
+                    selectorObject.stop().animate({top: '+=' + gravVeloc + '%'}, 50, 'linear'); //Stop any current animations and then drop the bird by Velocity%
                     gravVeloc += gravAccel; //Add the acceleration scalar to the velocity scalar.
                     //Limit the maximum velocity of the bird
                     if (gravVeloc > terminalVelocity) {
@@ -541,8 +557,8 @@
 
         //Generate a new pipe
         function addPipe() {
-            var PipeGap = 30, //Gap between pipes in %
-                MinPipeHeight = 5; //Minimum pipe height, so the pipes are still okay sized.
+            var PipeGap = 50, //Gap between pipes in %
+                MinPipeHeight = 0; //Minimum pipe height, so the pipes are still okay sized.
 
             var MaxTopPipeHeight = 100 - PipeGap - 2 * MinPipeHeight; //Max height the top pipe can be
             var TopPipeHeight = Math.random() * MaxTopPipeHeight + MinPipeHeight; //Actual top pipe height, which is random.

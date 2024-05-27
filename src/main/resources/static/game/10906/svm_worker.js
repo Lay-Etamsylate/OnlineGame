@@ -174,6 +174,7 @@ function svm_predict(input) {
     }
 
     const labels = ['all', 'idle', 'index', 'index_and_middle', 'thumb'];
+    // const labels = ['五指张开', '无动作', '食指', '比耶', '拇指'];
     return labels[svmInstance.predict(vec_to_feature(input))] || '';
 }
 

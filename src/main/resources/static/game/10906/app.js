@@ -1,5 +1,5 @@
 const svmWorker = new Worker('./10906/svm_worker.js');
-
+    
 const videoElement = document.getElementsByClassName('input_video')[0];
 const canvasElement = document.getElementsByClassName('output_canvas')[0];
 const canvasCtx = canvasElement.getContext('2d');
@@ -35,8 +35,10 @@ let lastGesture = '';
 
 function virtualKeyboard(gesture) {
     const now = Date.now();
-    if (lastGesture === gesture && lastGestureTime > now - 300) {
-        // 同样的手势最多每300ms触发一次
+    if (lastGesture === gesture && lastGestureTime > now - 1000) {
+        // 同样的手势最多每1000ms触发一次
+        return;
+    } else if (lastGesture != gesture && lastGestureTime > now - 800) {
         return;
     }
 
@@ -100,7 +102,7 @@ async function requestCam() {
             height: {min: 720, ideal: 720, max: 1280},
             frameRate: {ideal: 30}
         }, audio: false
-    }).catch(function (error){
+    }).catch(function (error) {
         console.log(error)
     });
     const tracks = stream.getVideoTracks();
