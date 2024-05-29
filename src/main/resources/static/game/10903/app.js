@@ -54,15 +54,15 @@ function virtualKeyboard(gesture) {
         case 'all':
             dispatchKey(65);
             break;
-        // case 'thumb':
-        //     dispatchKey(38);
-        //     break;
-        // case 'index':
-        //     dispatchKey(39);
-        //     break;
-        // case 'index_and_middle':
-        //     dispatchKey(40);
-        //     break;
+        case 'thumb':
+            dispatchKey(65);
+            break;
+        case 'index':
+            dispatchKey(65);
+            break;
+        case 'index_and_middle':
+            dispatchKey(65);
+            break;
     }
 }
 
